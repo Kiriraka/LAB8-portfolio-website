@@ -1,79 +1,12 @@
-# React.js Fundamentals – LAB 08 Experiment 2
+# React + Vite
 
-## 📂 โครงสร้างไฟล์
-    LAB-08/experiment2/
-    ├── src/
-    │ ├── App.jsx
-    │ ├── App.css
-    │ ├── Welcome.jsx
-    │ ├── Counter.jsx
-    │ ├── TodoForm.jsx
-    │ ├── TodoList.jsx #
-    │ ├── TodoItem.jsx #
-    │ ├── context/
-    │ │ └── TodoContext.jsx
-    │ └── main.jsx 
-    └── README.md
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 📝 เนื้อหา Workshop
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### 1. Components & JSX
-- **Component** = หน่วยย่อย UI เช่น Navbar, Sidebar, Post  
-- **JSX** = Syntax เขียน UI คล้าย HTML ใน JavaScript  
-- ตัวอย่าง: `App.jsx` เรียก `Welcome.jsx`
+## Expanding the ESLint configuration
 
----
-
-### 2. State & Props
-- **Props** → ส่งค่าจาก Parent → Child (เปลี่ยนไม่ได้)  
-- **State** → เก็บค่าใน Component (เปลี่ยนได้ด้วย `useState`)  
-- ตัวอย่าง: `Welcome` รับ `name`, `Counter` มี state `count`
-
----
-
-### 3. Event Handling
-- ใช้ attribute เช่น `onClick`, `onChange`  
-- ตัวอย่าง: `Counter` มีปุ่มเพิ่ม/ลดค่า
-
----
-
-### 4. useEffect
-- จัดการ **Side Effects** เช่น API, document.title, setInterval  
-- ตัวอย่าง: เปลี่ยน `document.title` ตามค่า count
-
----
-
-### 5. Mini Project: To-Do List
-- **App.jsx** → รวม state และ logic จัดการ todos  
-- **TodoForm.jsx** → Input + ปุ่ม เพิ่ม todo  
-- **TodoList.jsx** → แสดง todos + ลบได้  
-- **App.css** → ตกแต่ง UI
-
----
-
-## 🚀 Challenge Activities
-1. **Toggle Completed** → คลิกเพื่อ mark งานเสร็จ (ขีดฆ่า)  
-2. **Edit To-Do** → แก้ไขข้อความ todo ได้  
-3. **useContext** → แก้ปัญหา prop drilling โดยใช้ `TodoContext`  
-4. **Container / Presentational Pattern**  
-   - Container = จัดการ logic/state (เช่น `App.jsx`)  
-   - Presentational = UI อย่างเดียว (เช่น `TodoForm`, `TodoList`)  
-
----
-
-## ✅ Key Takeaways
-- เข้าใจการใช้ **JSX** และ **Component-Based Architecture**  
-- รู้จักการทำงานของ **State & Props**  
-- ตอบสนองผู้ใช้ด้วย **Event Handling**  
-- จัดการ side effects ด้วย **useEffect**  
-- ทำ Mini Project → **To-Do List App** รวมทุกแนวคิด  
-- ฝึก Challenge → Toggle, Edit, useContext, Design Pattern  
-
----
-
-## ▶️ การรันโปรเจกต์
-```bash
-npm install
-npm run dev
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
