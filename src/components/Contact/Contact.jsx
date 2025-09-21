@@ -1,37 +1,7 @@
-<<<<<<< HEAD
-// // src/components/Contact/Contact.jsx - Template
-// import './Contact.css';
 
-// function Contact() {
-//   return (
-//     <section id="contact" className="contact section">
-//       <div className="container">
-//         <h2 className="section-title">Get In Touch</h2>
-//         <p className="section-subtitle">
-//           Have a project in mind? Let's work together!
-//         </p>
-        
-//         {/* TODO: นักศึกษาเพิ่ม contact form ที่นี่ */}
-//         <div className="contact-placeholder">
-//           <p>Add contact form here</p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Contact;
-
-// src/components/Contact/Contact.jsx
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Github } from "lucide-react";
 import "./Contact.css";
-=======
-// src/components/Contact/Contact.jsx - Template
-import './Contact.css';
-import { motion } from "framer-motion";
-const [loading, setLoading] = useState(false);
->>>>>>> feature/enhancements
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -46,13 +16,13 @@ function Contact() {
   // validate form
   const validate = () => {
     let tempErrors = {};
-    if (!formData.name.trim()) tempErrors.name = "Name is required";
+    if (!formData.name.trim()) tempErrors.name = "จำเป็นต้องมีชื่อ";
     if (!formData.email.trim()) {
-      tempErrors.email = "Email is required";
+      tempErrors.email = "จำเป็นต้องมีอีเมล";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       tempErrors.email = "Invalid email format";
     }
-    if (!formData.message.trim()) tempErrors.message = "Message is required";
+    if (!formData.message.trim()) tempErrors.message = "จำเป็นต้องมีข้อความ";
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
@@ -73,33 +43,26 @@ function Contact() {
       <div className="container">
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">
-          Have a project in mind? Let's work together!
+          มีโครงการอยู่ในใจหรือเปล่า? มาทำงานร่วมกันเถอะ!
         </p>
-<<<<<<< HEAD
 
         <div className="contact-content">
           {/* Left: Contact Info */}
           <div className="contact-info">
             <h3>Contact Information</h3>
             <p>
-              <Mail size={18} /> your.email@example.com
+              <Mail size={18} /> musicben100@gmail.com
             </p>
             <p>
-              <Phone size={18} /> +66 123 456 789
+              <Phone size={18} /> 0951358841
             </p>
             <p>
-              <MapPin size={18} /> Bangkok, Thailand
+              <MapPin size={18} /> Chiang Mai, Thailand
             </p>
 
             <div className="social-links">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Kiriraka/" target="_blank" rel="noopener noreferrer">
                 <Github size={22} />
-              </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                <Linkedin size={22} />
-              </a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                <Twitter size={22} />
               </a>
             </div>
           </div>
@@ -155,49 +118,10 @@ function Contact() {
               Send Message
             </button>
           </form>
-=======
-        {<motion.section
-          id="contact"
-          className="contact section"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.h2
-            className="section-title"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            Get In Touch
-          </motion.h2>
-        </motion.section>}
-        <div className="contact-placeholder">
-          <p>Add contact form here</p>
->>>>>>> feature/enhancements
         </div>
       </div>
     </section>
   );
 }
 
-<<<<<<< HEAD
 export default Contact;
-=======
-const handleSubmit = (e) => {
-  e.preventDefault();
-  if (validate()) {
-    setLoading(true);
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setSubmitted(true);
-      setLoading(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 2000); // จำลอง API call
-  }
-};
-
-<button type="submit" className="btn-primary" disabled={loading}>
-  {loading ? "Sending..." : "Send Message"}
-</button>
-export default Contact;
->>>>>>> feature/enhancements
