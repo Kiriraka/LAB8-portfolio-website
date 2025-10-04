@@ -33,6 +33,8 @@
     ├── assets/
     │ └── images/
     ├── App.jsx
+    ├── App.jsx
+    ├── index.css
     └── main.jsx
 
   ---
